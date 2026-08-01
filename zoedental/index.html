@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOE Dental Clinic — Premium Dental Care in Dubai</title>
+    <meta name="description" content="ZOE Dental Clinic in Dubai — Your trusted destination for exceptional dental care. Services include Pediatric Dentistry, Hollywood Smile & Veneers, and Dental Implants.">
+    <meta name="keywords" content="dental clinic Dubai, dentist Port Saeed, Hollywood smile Dubai, dental implants, veneers, pediatric dentistry">
+    <meta property="og:title" content="ZOE Dental Clinic — Premium Dental Care in Dubai">
+    <meta property="og:description" content="Your trusted destination for exceptional dental care in Dubai.">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --primary: #5A3694;
+            --primary-light: #7B52B8;
+            --primary-dark: #3D2466;
+            --gold: #C5A059;
+            --gold-light: #D4B874;
+            --dark: #1a1a2e;
+            --darker: #0f0f1e;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --gray: #6c757d;
+            --dark-gray: #343a40;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Preview Banner */
+        .preview-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(90, 54, 148, 0.3);
+        }
+
+        .preview-banner span {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--darker);
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 44px;
+            z-index: 999;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .logo-text .accent {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--gold);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--primary-dark) 50%, var(--primary) 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 5% 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(123, 82, 184, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-tagline {
+            color: var(--gold);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--gold-light);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--darker);
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 14px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 5%;
+            background: var(--light-gray);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .about-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .about-features li::before {
+            content: '✓';
+            background: var(--primary);
+            color: var(--white);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .about-visual {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--border-radius);
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .about-visual .icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .about-visual h4 {
+            color: var(--white);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .about-visual p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 5%;
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 5%;
+            background: var(--light-gray);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .team-card h4 {
+            font-size: 18px;
+            color: var(--dark);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .team-experience {
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .team-languages {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 100px 5%;
+            background: var(--darker);
+            color: var(--white);
+        }
+
+        .why-us .section-title {
+            color: var(--white);
+        }
+
+        .why-us .section-tag {
+            color: var(--gold);
+        }
+
+        .why-us .section-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(197, 160, 89, 0.15);
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .why-item h4 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        .why-item p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 5%;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-detail h5 {
+            font-size: 15px;
+            color: var(--dark);
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .contact-detail p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(90, 54, 148, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 54, 148, 0.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 5% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand .logo-text {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--darker);
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-col ul a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--darker);
+                flex-direction: column;
+                padding: 20px 5%;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preview Banner -->
+    <div class="preview-banner">
+        This is a complimentary preview website created by <span>Ahmad</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <span class="logo-text">ZOE<span class="accent"> Dental</span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Book Now</a>
+        <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content animate">
+            <p class="hero-tagline">The Leading Dentistry Clinic</p>
+            <h1>Your Trusted Destination for <span class="highlight">Exceptional Dental Care</span></h1>
+            <p>At Zoe Dental Clinic, we prioritize your dental health, offering personalized treatments and creating lasting relationships built on trust. Our experienced team provides world-class dental services in the heart of Dubai.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book an Appointment</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">22+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Expert Dentists</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Specialties</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">About Us</p>
+                <h2 class="section-title">Who We Are</h2>
+                <p class="section-subtitle">Your trusted dental care partner in Dubai since our inception</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Exceptional Care, Lasting Trust</h3>
+                    <p>At Zoe Dental Clinic, we prioritize your dental health, offering personalized treatments and creating lasting relationships built on trust. Our clinic, also known as Alkaissi Medical Center, is located in the heart of Port Saeed, Dubai.</p>
+                    <p>Our team of highly experienced dentists brings over two decades of expertise in prosthodontics, implantology, and general dental care. We are committed to making your dental experience comfortable, professional, and tailored to your unique needs.</p>
+                    <ul class="about-features">
+                        <li>DHA Licensed Dental Clinic</li>
+                        <li>22+ Years of Clinical Experience</li>
+                        <li>Personalized Treatment Plans</li>
+                        <li>Arabic & English Speaking Team</li>
+                        <li>Convenient Port Saeed Location</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <div class="icon">🦷</div>
+                    <h4>Alkaissi Medical Center</h4>
+                    <p>Branch of Zoe Dental Clinic — Serving Dubai with exceptional dental care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">Our Services</p>
+                <h2 class="section-title">Comprehensive Dental Care</h2>
+                <p class="section-subtitle">Offering an extensive range of dental solutions tailored to your individual needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🦷</div>
+                    <h3>Pediatric Dentistry</h3>
+                    <p>Comprehensive dental care for children in a warm, friendly, and comfortable environment. Our experienced team makes every visit stress-free for both children and parents.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Hollywood Smile & Veneers</h3>
+                    <p>Transform your smile with custom veneers and Hollywood smile makeovers. Get the flawless, confident smile you've always dreamed of with our expert cosmetic dentistry.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔩</div>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent tooth replacement solutions using advanced implant technology. Our specialist implantologist with 22+ years of experience ensures precise, long-lasting results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">Why Choose Us</p>
+                <h2 class="section-title">The ZOE Dental Advantage</h2>
+                <p class="section-subtitle">What sets us apart in Dubai's dental care landscape</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">⭐</div>
+                    <h4>Experienced Specialists</h4>
+                    <p>Our dentists bring 21-22 years of experience with master's degrees and international training.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🏥</div>
+                    <h4>DHA Licensed</h4>
+                    <p>Fully licensed by the Dubai Health Authority, ensuring the highest standards of care.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">🌍</div>
+                    <h4>Bilingual Team</h4>
+                    <p>Our team speaks both Arabic and English, making every patient feel at home.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">📍</div>
+                    <h4>Prime Location</h4>
+                    <p>Conveniently located in Business Village, Clock Tower Roundabout, Port Saeed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">Our Team</p>
+                <h2 class="section-title">Meet Our Expert Dentists</h2>
+                <p class="section-subtitle">Highly skilled professionals dedicated to your dental health</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">LA</div>
+                    <h4>Dr. Luay Abood</h4>
+                    <p class="team-role">Prosthodontist / Implantologist</p>
+                    <p class="team-experience">22 years experience · Master's in Prosthodontics (Univ. of Toronto)</p>
+                    <p class="team-languages">Arabic / English</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">MR</div>
+                    <h4>Dr. Muhamad Rehan</h4>
+                    <p class="team-role">General Dentist</p>
+                    <p class="team-experience">21 years experience in general dental care</p>
+                    <p class="team-languages">Arabic / English</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">MK</div>
+                    <h4>Dr. Marwa Kurkchi</h4>
+                    <p class="team-role">General Dentist</p>
+                    <p class="team-experience">22 years experience · Master's in Basic Science</p>
+                    <p class="team-languages">Arabic / English</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready for a Healthier Smile?</h2>
+        <p>Book your appointment today and experience exceptional dental care at ZOE Dental Clinic</p>
+        <a href="#contact" class="btn-primary">Book an Appointment</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-tag">Contact Us</p>
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">We're here to help with all your dental needs</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Visit Our Clinic</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h5>Address</h5>
+                            <p>Block B - Second Floor, Office 216<br>Business Village, Clock Tower Roundabout<br>Port Saeed, Dubai, UAE</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h5>Phone</h5>
+                            <p>+971 4 298 1333<br>+971 50 251 6496</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h5>Email</h5>
+                            <p>info@zoedental.ae</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h5>Opening Hours</h5>
+                            <p>Monday to Sunday: 10:00 AM - 7:00 PM<br>Friday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="Enter your phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Select Your Dentist</label>
+                            <select>
+                                <option>Choose a dentist</option>
+                                <option>Dr. Luay Abood — Prosthodontist / Implantologist</option>
+                                <option>Dr. Muhamad Rehan — General Dentist</option>
+                                <option>Dr. Marwa Kurkchi — General Dentist</option>
+                                <option>Dr. Anish John Behanan</option>
+                                <option>Dr. Zaynab Alkaissi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text">ZOE<span class="accent"> Dental</span></div>
+                <p>Your trusted destination for exceptional dental care in Dubai. We prioritize your dental health with personalized treatments and lasting relationships built on trust.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="#services">Pediatric Dentistry</a></li>
+                    <li><a href="#services">Hollywood Smile & Veneers</a></li>
+                    <li><a href="#services">Dental Implants</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <ul>
+                    <li>+971 4 298 1333</li>
+                    <li>+971 50 251 6496</li>
+                    <li>info@zoedental.ae</li>
+                    <li>Port Saeed, Dubai</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 ZOE Dental Clinic. Alkaissi Medical Center — Branch of Zoe Dental Clinic. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you shortly to confirm your appointment.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
