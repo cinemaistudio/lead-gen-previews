@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilham Dental Clinic | Premium Dental Care in Dubai Marina</title>
+    <meta name="description" content="Ilham Dental Clinic in Dubai Marina - Expert dental care since 1996. Services include implants, orthodontics, veneers, root canal treatment, and more. Book your appointment today.">
+    <meta name="keywords" content="dental clinic Dubai, dentist Dubai Marina, Ilham Dental, dental implants Dubai, orthodontics Dubai, teeth whitening Dubai">
+    
+    <!-- Preview Banner -->
+    <div style="background: linear-gradient(135deg, #62c9f5, #33363b); color: white; text-align: center; padding: 12px 20px; font-family: 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; position: sticky; top: 0; z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+        🦷 This is a complimentary preview website created by Ahmad.
+    </div>
+    
+    <style>
+        :root {
+            --primary: #33363b;
+            --secondary: #1a1a2e;
+            --accent: #62c9f5;
+            --accent-dark: #3a9fd0;
+            --text: #333333;
+            --text-light: #666666;
+            --bg: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-dark: #33363b;
+            --border: #e0e0e0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: var(--bg-dark);
+            color: white;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+        
+        header .top-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        header .top-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        header .top-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .nav-cta:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(98, 201, 245, 0.15), transparent);
+            border-radius: 50%;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(98, 201, 245, 0.1), transparent);
+            border-radius: 50%;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(98, 201, 245, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid white;
+            transition: var(--transition);
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Stats Bar */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 20px;
+            background: var(--bg-light);
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        
+        /* About */
+        .about {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .about-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+        }
+        
+        .about-features li::before {
+            content: '✓';
+            background: var(--accent);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .about-card {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .about-card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Services */
+        .services {
+            padding: 80px 5%;
+            background: var(--bg-light);
+        }
+        
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .why-card {
+            text-align: center;
+            padding: 40px 25px;
+        }
+        
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: var(--accent);
+        }
+        
+        .why-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        
+        .why-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        /* Doctors */
+        .doctors {
+            padding: 80px 5%;
+            background: var(--bg-light);
+        }
+        
+        .doctors-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+        
+        .doctor-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .doctor-avatar {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--accent);
+        }
+        
+        .doctor-info {
+            padding: 20px;
+        }
+        
+        .doctor-info h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .doctor-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 35px;
+            border-radius: var(--radius);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--accent);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--text);
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .author-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .contact-detail a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: var(--radius);
+        }
+        
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(98, 201, 245, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .contact-form button {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .contact-form button:hover {
+            background: var(--accent-dark);
+        }
+        
+        /* CTA */
+        .cta-section {
+            padding: 60px 5%;
+            text-align: center;
+            background: var(--bg-light);
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: white;
+            padding: 50px 5% 20px;
+        }
+        
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero .tagline { font-size: 1.2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .contact-container { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .stats { gap: 30px; }
+            .stat-number { font-size: 2rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn-primary, .btn-outline { width: 100%; text-align: center; }
+            header .top-info { flex-direction: column; gap: 5px; font-size: 12px; }
+            .section-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <header>
+        <div class="top-info">
+            <span>📞 <a href="tel:0506524440">050 652 4440</a></span>
+            <span>✉️ <a href="mailto:ilhamdentalclinic@gmail.com">ilhamdentalclinic@gmail.com</a></span>
+            <span>📍 Dubai Marina, Diamond 3</span>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">🦷</div>
+            Ilham Dental Clinic
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Book Appointment</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ilham Dental Clinic</h1>
+            <div class="tagline">Good Service. Quality.</div>
+            <p>Trusted dental care in Dubai Marina since 1996. Our experienced international team provides high-quality dental treatments at convenient prices.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book Appointment</a>
+                <a href="#services" class="btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number">28+</div>
+            <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Expert Dentists</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Dental Services</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Happy Patients</div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Our Clinic</h2>
+        <p class="section-subtitle">Your trusted dental partner in Dubai Marina</p>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Since 1996, Ilham Dental Clinic has been dedicated to providing exceptional dental care in Dubai Marina. Our goal is to have all our patients satisfied by offering convenient prices for high-quality materials and quality service.</p>
+                <p>Our team of internationally trained dentists brings expertise from around the world, ensuring you receive the best possible care in a comfortable and welcoming environment.</p>
+                <ul class="about-features">
+                    <li>Internationally trained dental specialists</li>
+                    <li>Affordable pricing with quality materials</li>
+                    <li>Comprehensive range of dental services</li>
+                    <li>Modern dental technology and equipment</li>
+                    <li>Personalized treatment plans</li>
+                </ul>
+            </div>
+            <div class="about-card">
+                <h3>Why Choose Ilham Dental?</h3>
+                <p style="color: var(--text-light); font-size: 1.05rem;">At Ilham Dental Clinic, we combine years of experience with a patient-first approach. Whether you need a routine checkup or advanced dental treatment, our team is here to help you achieve a healthy, beautiful smile.</p>
+                <p style="color: var(--text-light); font-size: 1.05rem; margin-top: 15px;">We use high-quality materials and modern techniques to ensure lasting results and patient satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2 class="section-title">Our Dental Services</h2>
+            <p class="section-subtitle">Comprehensive dental care for the whole family</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🦷</div>
+                    <h3>Consultation</h3>
+                    <p>Comprehensive consultation and examination with X-ray</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Composite Filling</h3>
+                    <p>Tooth-colored fillings for a natural look and durable protection</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Cleaning & Polishing</h3>
+                    <p>Professional scaling and polishing with Airflow technology</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Root Canal Treatment</h3>
+                    <p>Precision root canal therapy to save your natural teeth</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Tooth Extraction</h3>
+                    <p>Safe and comfortable removal of damaged teeth</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Teeth Whitening</h3>
+                    <p>Advanced Zoom bleaching for a brighter, whiter smile</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👑</div>
+                    <h3>Zirconia Crowns</h3>
+                    <p>Premium zirconia crowns and bridges for natural-looking results</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Veneers</h3>
+                    <p>Custom dental veneers for a perfect smile transformation</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🦴</div>
+                    <h3>Dental Implants</h3>
+                    <p>Permanent tooth replacement with high-quality implants</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">😁</div>
+                    <h3>Orthodontics</h3>
+                    <p>Metal braces, clear braces, Invisalign, and Estciligner options</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🦽</div>
+                    <h3>Dentures</h3>
+                    <p>Flexible and acrylic partial and complete dentures</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Night Guard</h3>
+                    <p>Custom night guards to protect your teeth while you sleep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <h2 class="section-title">Why Choose Ilham Dental?</h2>
+        <p class="section-subtitle">We make dental visits comfortable and stress-free</p>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🏆</div>
+                <h3>28+ Years Experience</h3>
+                <p>Serving Dubai Marina with quality dental care since 1996</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🌍</div>
+                <h3>International Team</h3>
+                <p>Dentists from Turkey, Azerbaijan, India, and Dominican Republic</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <h3>Affordable Prices</h3>
+                <p>Quality materials and service at convenient, transparent prices</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤗</div>
+                <h3>Patient-First Care</h3>
+                <p>Personalized treatment plans tailored to your needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors -->
+    <section class="doctors" id="doctors">
+        <div class="doctors-container">
+            <h2 class="section-title">Meet Our Doctors</h2>
+            <p class="section-subtitle">Experienced dental professionals from around the world</p>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Maksut Behruzoglu</h3>
+                        <p>Turkey</p>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Ali Isa Mehdiyev</h3>
+                        <p>Azerbaijan</p>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Mohammed Lukman</h3>
+                        <p>India</p>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <div class="doctor-info">
+                        <h3>Dr. Islam Makki</h3>
+                        <p>Dominican Republic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Patient Reviews</h2>
+        <p class="section-subtitle">What our patients say about us</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">I broke a tooth yesterday. Already today, my tooth was healed by the wonderful doctors of the Ilham dental clinic. I am infinitely grateful to the golden hands of Dr. Ali Isa! Thank you!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">D</div>
+                    <div>
+                        <div class="author-name">Dasha Mekeyeva</div>
+                        <div class="author-role">Patient</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">Dr. Ali is very responsive and has a good bedside manner. I was treated right away and reassured me that I can come back should any problem arise post-treatment. Thank you!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">K</div>
+                    <div>
+                        <div class="author-name">Karina Ramos</div>
+                        <div class="author-role">Patient</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready for a Healthier Smile?</h2>
+        <p>Book your appointment today and experience quality dental care at affordable prices.</p>
+        <a href="#contact" class="btn-primary">Book Your Appointment</a>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Visit us at Dubai Marina or reach out to schedule your appointment. We're here to help you achieve a beautiful, healthy smile.</p>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📞</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:0506524440">050 652 4440</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">✉️</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:ilhamdentalclinic@gmail.com">ilhamdentalclinic@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">📍</div>
+                    <div>
+                        <strong>Address</strong><br>
+                        Dubai Marina, Diamond 3<br>
+                        Dubai, United Arab Emirates
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Book an Appointment</h3>
+                <form action="mailto:ilhamdentalclinic@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="Your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="Your email address">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Needed</label>
+                        <select name="service">
+                            <option value="">— Please choose —</option>
+                            <option>Consultation</option>
+                            <option>Cleaning</option>
+                            <option>Filling</option>
+                            <option>Root Canal</option>
+                            <option>Extraction</option>
+                            <option>Whitening</option>
+                            <option>Crown</option>
+                            <option>Veneer</option>
+                            <option>Implant</option>
+                            <option>Orthodontics</option>
+                            <option>Dentures</option>
+                            <option>Night Guard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Tell us about your dental needs..."></textarea>
+                    </div>
+                    <button type="submit">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🦷 Ilham Dental Clinic</h4>
+                <p>Providing quality dental care in Dubai Marina since 1996. Your smile is our priority.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#doctors">Our Doctors</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📞 050 652 4440</p>
+                <p>✉️ ilhamdentalclinic@gmail.com</p>
+                <p>📍 Dubai Marina, Diamond 3</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Ilham Dental Clinic. All rights reserved.<br>
+            This is a complimentary preview website created by Ahmad.
+        </div>
+    </footer>
+
+</body>
+</html>
