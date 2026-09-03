@@ -1,18 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Green Dots Services LLC | Pest Control & Cleaning in Dubai</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Dots Pest Control & Cleaning | Dubai</title>
 <style>
-:root{--green:#2f6b4f;--dark:#16352a;--cream:#f5f1e8;--accent:#d9a441}*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--dark);background:var(--cream);line-height:1.6}.banner{background:var(--dark);color:#fff;text-align:center;padding:10px;font-size:13px}.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 7%;background:#fff}.logo{font-weight:800;font-size:22px;color:var(--green)}.nav a{color:var(--dark);text-decoration:none;margin-left:24px}.hero{padding:92px 7%;background:linear-gradient(120deg,#e4eee5,#f8f3e8);display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.eyebrow{color:var(--green);font-weight:700;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(42px,6vw,76px);line-height:1.02;margin:14px 0}.hero p{font-size:19px;max-width:620px}.button{display:inline-block;background:var(--green);color:#fff;padding:14px 22px;border-radius:4px;text-decoration:none;font-weight:700;margin-top:14px}.card{background:#fff;padding:34px;border-radius:16px;box-shadow:0 20px 60px #16352a18}.section{padding:78px 7%}.section h2{font-size:42px;line-height:1.1;margin-top:0}.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.service{background:#fff;padding:26px;border-left:4px solid var(--accent);border-radius:8px}.contact{background:var(--dark);color:#fff}.contact a{color:#fff}.footer{padding:24px 7%;font-size:14px;background:#10271f;color:#dce8df}@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:60px}.nav a{margin-left:10px;font-size:13px}.services{grid-template-columns:1fr}}
+:root{--primary:#1b4332;--accent:#2d6a4f;--bright:#74c69d;--light:#f0f7f2;--text:#333}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--text);line-height:1.6}
+.banner{background:#e0f2e9;color:#1b4332;text-align:center;padding:10px;font-size:14px;font-weight:600}
+header{background:var(--primary);color:#fff;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:700}
+.logo span{color:var(--bright)}
+.top-contact{font-size:14px;display:flex;gap:20px;flex-wrap:wrap}
+.top-contact a{color:#fff;text-decoration:none}
+.hero{background:linear-gradient(135deg,var(--primary),#081c15);color:#fff;padding:80px 5%;text-align:center}
+.hero h1{font-size:38px;margin-bottom:15px;line-height:1.2}
+.hero p{font-size:17px;max-width:600px;margin:0 auto 30px;opacity:.9}
+.btn{display:inline-block;padding:14px 40px;background:var(--bright);color:#081c15;text-decoration:none;border-radius:30px;font-weight:700;font-size:16px;transition:.3s}
+.btn:hover{background:#52b788;transform:translateY(-2px)}
+.section{padding:70px 5%;max-width:1150px;margin:0 auto}
+.section h2{text-align:center;font-size:30px;color:var(--primary);margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:30px}
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:35px 25px;text-align:center;transition:.3s;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.card:hover{box-shadow:0 8px 30px rgba(0,0,0,.1);transform:translateY(-5px)}
+.card h3{color:var(--primary);margin-bottom:12px;font-size:19px}
+.card p{color:#666;font-size:14px}
+.about{background:var(--light);padding:70px 5%;text-align:center}
+.about-inner{max-width:800px;margin:0 auto}
+.about p{font-size:16px;color:#555;margin-bottom:20px}
+.stats{display:flex;justify-content:center;gap:50px;flex-wrap:wrap;margin-top:40px}
+.stat{text-align:center}
+.stat span{display:block;font-size:34px;color:var(--accent);font-weight:700}
+.stat label{color:var(--primary);font-weight:600}
+.cta{background:linear-gradient(135deg,var(--primary),#081c15);color:#fff;padding:60px 5%;text-align:center}
+.cta h2{font-size:28px;margin-bottom:15px}
+.cta p{opacity:.9;margin-bottom:30px}
+.contact{background:#fff;padding:70px 5%;text-align:center}
+.contact-info{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:30px}
+.contact-item h3{color:var(--primary);margin-bottom:8px}
+.contact-item a{color:var(--accent);text-decoration:none;font-size:16px;font-weight:600}
+footer{background:#081c15;color:#aaa;padding:35px 5%;text-align:center}
+@media(max-width:768px){.hero h1{font-size:26px}.section h2{font-size:24px}}
 </style>
 </head>
 <body>
 <div class="banner">This is a complimentary preview website created by Ahmad.</div>
-<nav class="nav"><div class="logo">GREEN DOTS</div><div><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
-<section class="hero"><div><div class="eyebrow">Pest control & cleaning · Dubai</div><h1>Quality service. Cleaner spaces.</h1><p>Professional pest control and cleaning services for commercial and residential apartments, villas, restaurants, cafeterias, offices and hotels.</p><a class="button" href="#contact">Request a service</a></div><div class="card"><h3>Green Dots Services LLC</h3><p>Professional staff. Affordable solutions. Reliable support for homes and businesses across Dubai.</p><p><strong>Call:</strong> +971 4 259 0481</p><p><strong>Email:</strong> operations@gdsdxb.com</p></div></section>
-<section class="section" id="services"><div class="eyebrow">What we do</div><h2>Practical solutions for every space.</h2><div class="services"><div class="service"><h3>Pest Control</h3><p>Professional pest control for commercial and residential properties, including villas, apartments, restaurants, cafeterias, offices and hotels.</p></div><div class="service"><h3>Cleaning</h3><p>Affordable cleaning support delivered by professional staff for homes and business spaces.</p></div></div></section>
-<section class="section" id="about"><div class="card"><div class="eyebrow">Why Green Dots</div><h2>Professional, affordable, dependable.</h2><p>Green Dots Services LLC provides pest control and cleaning services in Dubai, with options for residential and commercial properties and annual contracts.</p></div></section>
-<section class="section contact" id="contact"><div class="eyebrow" style="color:#d9a441">Get in touch</div><h2>Ready for a cleaner, safer space?</h2><p>Contact Green Dots Services LLC to discuss your pest control or cleaning needs.</p><p><strong>Phone:</strong> <a href="tel:+97142590481">+971 4 259 0481</a><br><strong>Email:</strong> <a href="mailto:operations@gdsdxb.com">operations@gdsdxb.com</a></p></section>
-<footer class="footer">© Green Dots Services LLC · Dubai, UAE</footer>
-</body></html>
+<header>
+<div class="logo">Green <span>Dots</span> Pest Control</div>
+<div class="top-contact">
+<a href="tel:+97142590481">Call: +971 4 259 0481</a>
+<a href="mailto:operations@gdsdxb.com">operations@gdsdxb.com</a>
+</div>
+</header>
+<section class="hero">
+<h1>Pest Control &amp; Cleaning Services in Dubai</h1>
+<p>Quality cleaning, professional staff, affordable prices. Protecting homes and businesses across Dubai — residential and commercial.</p>
+<a href="#contact" class="btn">Get a Free Quote</a>
+</section>
+<section class="section" id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><h3>Pest Control</h3><p>Safe, effective pest control for apartments, villas, and businesses across Dubai.</p></div>
+<div class="card"><h3>Cleaning Services</h3><p>Professional deep cleaning for homes and commercial spaces — quality guaranteed.</p></div>
+<div class="card"><h3>Annual Contracts</h3><p>Ongoing protection for restaurants, cafeterias, offices, villas, and hotels.</p></div>
+<div class="card"><h3>Commercial &amp; Residential</h3><p>Complete coverage for apartments, villas, offices, and hospitality businesses.</p></div>
+</div>
+</section>
+<section class="about" id="about">
+<div class="about-inner">
+<h2 style="font-size:30px;color:var(--primary);margin-bottom:25px">Why Green Dots?</h2>
+<p>Green Dots Services LLC provides professional pest control and cleaning services in Dubai for commercial and residential customers. We combine quality work with professional staff at affordable prices.</p>
+<p>From one-off treatments to annual contracts for restaurants, cafeterias, offices, villas, and hotels — we keep your space protected all year round.</p>
+<div class="stats">
+<div class="stat"><span>Residential</span><label>Apartments &amp; Villas</label></div>
+<div class="stat"><span>Commercial</span><label>Offices &amp; Hotels</label></div>
+<div class="stat"><span>Annual</span><label>Contract Options</label></div>
+</div>
+</div>
+</section>
+<section class="cta">
+<h2>Pests or Dirt? We Handle Both.</h2>
+<p>Get a free quote today — fast response across all of Dubai.</p>
+<a href="#contact" class="btn">Contact Us Now</a>
+</section>
+<section class="contact" id="contact">
+<h2 style="font-size:30px;color:var(--primary);margin-bottom:15px">Get In Touch</h2>
+<p style="color:#555">Call us or send an email for a free quote.</p>
+<div class="contact-info">
+<div class="contact-item"><h3>Phone</h3><a href="tel:+97142590481">+971 4 259 0481</a></div>
+<div class="contact-item"><h3>Email</h3><a href="mailto:operations@gdsdxb.com">operations@gdsdxb.com</a></div>
+<div class="contact-item"><h3>Location</h3><p>Dubai, United Arab Emirates</p></div>
+</div>
+</section>
+<footer>
+<p>&copy; 2026 Green Dots Services LLC. All rights reserved.</p>
+</footer>
+</body>
+</html>
