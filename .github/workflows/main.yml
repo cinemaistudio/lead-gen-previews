@@ -7,7 +7,6 @@ jobs:
   secure-rdp:
     runs-on: windows-11-arm
     timeout-minutes: 360
-
     steps:
       - name: Verify Windows 11
         shell: pwsh
@@ -26,10 +25,8 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-
           $password = 'MR.English2008'
           $securePassword = ConvertTo-SecureString $password -AsPlainText -Force
-
           $account = Get-LocalUser -Name 'runneradmin' -ErrorAction SilentlyContinue
           if ($account) {
             Set-LocalUser -Name 'runneradmin' -Password $securePassword
@@ -39,21 +36,16 @@ jobs:
               -Password $securePassword `
               -Description 'Temporary RDP account'
           }
-
           Add-LocalGroupMember -Group 'Remote Desktop Users' -Member 'runneradmin' -ErrorAction SilentlyContinue
           Add-LocalGroupMember -Group 'Administrators' -Member 'runneradmin' -ErrorAction SilentlyContinue
-
           Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name 'fDenyTSConnections' -Value 0
           Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name 'UserAuthentication' -Value 1
-
           Set-Service -Name TermService -StartupType Automatic
           Start-Service -Name TermService
-
           Set-NetFirewallRule -DisplayGroup 'Remote Desktop' -Enabled True -Profile Any
           Get-NetFirewallRule -DisplayGroup 'Remote Desktop' |
             Get-NetFirewallAddressFilter |
             Set-NetFirewallAddressFilter -RemoteAddress '100.64.0.0/10'
-
           Write-Host "RDP configured for user: runneradmin"
           Write-Host "Password: MR.English2008"
 
@@ -62,8 +54,12 @@ jobs:
         run: |
           $ErrorActionPreference = 'Stop'
 
+          # --- Install Tailscale ---
           $installer = Join-Path $env:TEMP 'tailscale-setup.exe'
-          Invoke-WebRequest -Uri 'https://pkgs.tailscale.com/stable/tailscale-setup-latest.exe' -OutFile $installer
+          Write-Host "Downloading Tailscale installer..."
+          Invoke-WebRequest -Uri 'https://pkgs.tailscale.com/stable/tailscale-setup-latest.exe' -OutFile $installer -UseBasicParsing
+
+          Write-Host "Installing Tailscale..."
           $process = Start-Process -FilePath $installer -ArgumentList '/quiet' -Wait -PassThru
           if ($process.ExitCode -ne 0) {
             throw "Tailscale installation failed with exit code $($process.ExitCode)."
@@ -75,22 +71,20 @@ jobs:
           )
           $tailscaleExe = $paths | Where-Object { Test-Path $_ } | Select-Object -First 1
           if (-not $tailscaleExe) {
-            throw "Could not locate tailscale.exe."
+            throw "Could not locate tailscale.exe after installation."
           }
+          Write-Host "Using: $tailscaleExe"
 
-          # Fixed: Use different log files
-          $logFileOut = Join-Path $env:TEMP 'tailscale-up-out.log'
-          $logFileErr = Join-Path $env:TEMP 'tailscale-up-err.log'
-          if (Test-Path $logFileOut) { Remove-Item $logFileOut -Force }
-          if (Test-Path $logFileErr) { Remove-Item $logFileErr -Force }
-
+          # --- Start tailscale up (unattended + accept routes) ---
+          # We deliberately do NOT redirect stdout/stderr of a long-lived process.
+          # Instead we poll `tailscale status --json`.
+          Write-Host "Starting tailscale up..."
           $upProc = Start-Process `
             -FilePath $tailscaleExe `
             -ArgumentList @('up', '--accept-routes', '--unattended') `
-            -RedirectStandardOutput $logFileOut `
-            -RedirectStandardError $logFileErr `
             -PassThru `
-            -NoNewWindow
+            -NoNewWindow `
+            -WindowStyle Hidden
 
           Write-Host ""
           Write-Host "========================================"
@@ -105,34 +99,22 @@ jobs:
           $deadline = (Get-Date).AddMinutes(15)
 
           while ((Get-Date) -lt $deadline) {
-            Start-Sleep -Seconds 2
+            Start-Sleep -Seconds 3
 
-            # Check both log files
-            foreach ($log in @($logFileOut, $logFileErr)) {
-              if (Test-Path $log) {
-                $content = Get-Content $log -Raw -ErrorAction SilentlyContinue
-                if ($content -match 'https://login\.tailscale\.com/a/[A-Za-z0-9]+') {
-                  $authUrl = $Matches[0]
-                  break
-                }
-              }
-            }
-            if ($authUrl) { break }
-
-            # Also check status JSON
             try {
               $statusJson = & $tailscaleExe status --json 2>$null | Out-String
               if ($statusJson -match '"AuthURL"\s*:\s*"(https://[^"]+)"') {
                 $authUrl = $Matches[1]
-                if ($authUrl) { break }
+                break
               }
-            } catch {}
+            } catch {
+              # status may not be ready yet
+            }
           }
 
           if (-not $authUrl) {
-            Write-Host "--- tailscale logs ---"
-            if (Test-Path $logFileOut) { Get-Content $logFileOut }
-            if (Test-Path $logFileErr) { Get-Content $logFileErr }
+            Write-Host "Could not obtain AuthURL. Dumping status:"
+            & $tailscaleExe status 2>&1 | Out-Host
             throw "Timed out waiting for Tailscale auth URL (15 minutes)."
           }
 
@@ -143,11 +125,13 @@ jobs:
           Write-Host "########################################"
           Write-Host ""
 
-          # Wait until connected
+          # --- Wait until we have a 100.x Tailscale IP ---
           $connected = $false
           $waitDeadline = (Get-Date).AddMinutes(20)
+
           while ((Get-Date) -lt $waitDeadline) {
             Start-Sleep -Seconds 5
+
             try {
               $ip = (& $tailscaleExe ip -4 2>$null | Select-Object -First 1).Trim()
               if ($ip -and $ip -match '^100\.') {
@@ -155,23 +139,28 @@ jobs:
                 break
               }
             } catch {}
+
             Write-Host "Still waiting for auth... open: $authUrl"
           }
 
           if (-not $connected) {
+            Write-Host "Final status:"
+            & $tailscaleExe status 2>&1 | Out-Host
             throw "Timed out waiting for Tailscale authentication (20 minutes)."
           }
 
+          # Give the up process a moment to settle, then stop waiting on it
           if (-not $upProc.HasExited) {
-            try { $upProc.WaitForExit(30000) } catch {}
+            try { $upProc.WaitForExit(10000) } catch {}
           }
 
           $ip = (& $tailscaleExe ip -4 | Select-Object -First 1).Trim()
-          if (-not $ip) {
-            throw "Could not obtain the Tailscale IPv4 address after auth."
+          if (-not $ip -or $ip -notmatch '^100\.') {
+            throw "Could not obtain a valid Tailscale IPv4 address after auth."
           }
 
           $os = Get-CimInstance Win32_OperatingSystem
+
           Write-Host ""
           Write-Host "========================================"
           Write-Host " WINDOWS 11 RDP READY"
@@ -184,6 +173,10 @@ jobs:
           Write-Host "Password    : MR.English2008"
           Write-Host "Network     : Tailscale"
           Write-Host "========================================"
+
+          # Explicitly succeed so the step never fails after printing the credentials
+          $global:LASTEXITCODE = 0
+          exit 0
 
       - name: Keep runner active
         shell: pwsh
