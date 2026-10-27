@@ -76,15 +76,12 @@ jobs:
           Write-Host "Using: $tailscaleExe"
 
           # --- Start tailscale up (unattended + accept routes) ---
-          # We deliberately do NOT redirect stdout/stderr of a long-lived process.
-          # Instead we poll `tailscale status --json`.
           Write-Host "Starting tailscale up..."
           $upProc = Start-Process `
             -FilePath $tailscaleExe `
             -ArgumentList @('up', '--accept-routes', '--unattended') `
             -PassThru `
-            -NoNewWindow `
-            -WindowStyle Hidden
+            -NoNewWindow
 
           Write-Host ""
           Write-Host "========================================"
@@ -149,7 +146,7 @@ jobs:
             throw "Timed out waiting for Tailscale authentication (20 minutes)."
           }
 
-          # Give the up process a moment to settle, then stop waiting on it
+          # Give the up process a moment to settle
           if (-not $upProc.HasExited) {
             try { $upProc.WaitForExit(10000) } catch {}
           }
